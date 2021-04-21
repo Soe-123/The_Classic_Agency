@@ -1,0 +1,368 @@
+@font-face {
+  font-family: 'Bau';
+  src: url('/TCA_Fonts/Bau-Medium.woff2') format('woff2'),
+        url('/TCA_Fonts/Bau-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tw Cen MT';
+  src: url('/TCA_Fonts/TwCenMT-Regular.woff2') format('woff2'),
+        url('/TCA_Fonts/TwCenMT-Regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aktifo-B Book';
+  src: url('/TCA_Fonts/Aktifo-B-Book.woff2') format('woff2'),
+        url('/TCA_Fonts/Aktifo-B-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuperGroteskA';
+    src: url('/TCA_Fonts/SuperGroteskA-Rg.woff2') format('woff2'),
+        url('/TCA_Fonts/SuperGroteskA-Rg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuperGroteskA';
+    src: url('/TCA_Fonts/SuperGroteskA-Bd.woff2') format('woff2'),
+        url('/TCA_Fonts/SuperGroteskA-Bd.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+  font-family: 'SuperGroteskA';
+    src: url('/TCA_Fonts/SuperGroteskA-Med.woff2') format('woff2'),
+        url('/TCA_Fonts/SuperGroteskA-Med.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap
+}
+
+
+
+* {
+    box-sizing: border-box;
+  }
+
+body {
+  font-size: 100%;
+  background: black;
+  color: white;
+  font-family: 'SuperGroteskA';
+  font-size: 20px;
+  font-variant-numeric: oldstyle-nums;
+
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  position: static;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Snap Scroll */
+
+.parent {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow: scroll;
+  margin-top: -62px;
+}
+
+/* Section 1 - Video */
+
+.full-screen-video {
+  scroll-snap-align: start;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+.full-screen-video video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.full-screen-video picture {
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 25%;
+
+  animation:signup-response 0.5s 1;
+  -webkit-animation:signup-response 0.5s 1;
+  animation-fill-mode: forwards;
+
+  animation-delay:3s;
+  -webkit-animation-delay:1s; /* Safari and Chrome */
+  -webkit-animation-fill-mode: forwards;
+
+} 
+
+@keyframes signup-response{
+  from {opacity :1;}
+  to {opacity :0;}
+}
+
+@-webkit-keyframes signup-response{
+  from {opacity :1;}
+  to {opacity :0;}
+}
+
+/* Section 2 - Logo */
+
+.half-screen-logo {
+  scroll-snap-align: start;
+  display: flex;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.half-screen-logo picture {
+  width: 50%;
+  display: block;
+}
+
+/* Section 2 - Images */
+
+.image-set {
+  position: static;
+  height: 100vh;
+  background: black;
+}
+
+.car-images {
+  display: flex;
+  flex-wrap: wrap;
+  height: 50vh;
+  background: black;
+}
+
+.car-images picture {
+  flex-basis: 25%;
+  display: block;
+  position: relative;
+  padding: 10px;
+  height: calc(50vh - 10px);
+  overflow: hidden;
+  scroll-snap-align: start;
+  background: black;
+}
+
+.car-images picture img {
+max-width: 150%;
+}
+
+.car-images picture:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #ffffff00;
+}
+
+.text {
+  color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 2vw;
+}
+
+.text h3 {
+  font-family: 'SuperGroteskA';
+  font-weight: 600;
+  font-size: 7.4vw;
+  margin: 0;
+  padding-top: 10%;
+}
+
+.text h4 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.text p {
+  margin: 0;
+}
+
+.about {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 50vh;
+  overflow: scroll;
+}
+
+.about div:first-child {
+  display: flex;
+  padding: 20px 0 20px 0;
+}
+
+.about .contact {
+  display: flex;
+}
+
+.about h2 { 
+  font-family: 'SuperGroteskA';
+  font-weight: normal;
+  display: block;
+  flex-basis: 25%;
+  margin: 0;
+  font-size: 20px;
+}
+
+.about div {
+  flex-basis: 50%;
+}
+
+.about p {
+  margin-top: 0;
+}
+
+.about dd{
+  margin: 0;
+}
+
+.about dl {
+  margin: 0;
+  flex-basis: 25%;
+}
+
+.about a {
+  text-decoration: none;
+  color: white;
+}
+
+.contact {
+  scroll-snap-align: start;
+  height: 50vh;
+  padding-bottom: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+  .car-images picture {
+    flex-basis: 50%;
+  }
+
+  .image-set {
+    height: 200vh;
+  }
+
+  .about div {
+    flex-basis: 75%; 
+  }
+
+  .car-images {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .half-screen-logo picture {
+    padding-top: 10%;
+    width: 75%;
+    display: block;
+  }
+
+
+  .overlay {
+  opacity: 1;
+  }
+
+  .text {
+    padding-bottom: 16%;
+  }
+
+  .text h3 {
+  font-size: 30vw;
+  padding-top: 20%;
+  }
+
+  .car-images picture {
+    flex-basis: 100%;
+    padding: 10px 0;
+  }
+
+  .image-set {
+    height: 800vh;
+  }
+
+  .car-images {
+    height: 400vh;
+  }
+
+  .car-images picture {
+    height: calc(100vh - 10px);
+  }
+
+  .about {
+    height: 100vh;
+    padding-top: 25%;
+    padding-left: 20px;
+    padding-right: 20px
+  }
+
+  .about h2 {
+    margin-bottom: 20px;
+  }
+
+  .about div:first-child {
+    flex-direction: column;
+  }
+
+  .about .contact {
+    flex-direction: column;
+  }
+
+}
