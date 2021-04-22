@@ -17,15 +17,6 @@
 }
 
 @font-face {
-  font-family: 'Aktifo-B Book';
-  src: url('../TCA_Fonts/Aktifo-B-Book.woff2') format('woff2'),
-        url('../TCA_Fonts/Aktifo-B-Book.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'SuperGroteskA';
     src: url('../TCA_Fonts/SuperGroteskA-Rg.woff2') format('woff2'),
         url('../TCA_Fonts/SuperGroteskA-Rg.woff') format('woff');
@@ -52,6 +43,25 @@
     font-display: swap
 }
 
+@font-face {
+  font-family: 'Aktifo-B';
+  src: url('../TCA_Fonts/Aktifo-B-Medium.woff2') format('woff2'),
+        url('../TCA_Fonts/Aktifo-B-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Aktifo-B';
+  src: url('../TCA_Fonts/Aktifo-B-SemiBold.woff2') format('woff2'),
+      url('../TCA_Fonts/Aktifo-B-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 
 * {
@@ -62,7 +72,8 @@ body {
   font-size: 100%;
   background: black;
   color: white;
-  font-family: 'SuperGroteskA';
+  font-family: 'Aktifo-B';
+  font-weight: 500;
   font-size: 20px;
   font-variant-numeric: oldstyle-nums;
 
@@ -73,6 +84,10 @@ img {
   display: block;
   height: auto;
 }
+
+header {
+  position: relative;
+  z-index: 2;}
 
 header nav {
   display: flex;
@@ -126,7 +141,7 @@ header nav a {
   -webkit-animation:signup-response 0.5s 1;
   animation-fill-mode: forwards;
 
-  animation-delay:3s;
+  animation-delay:7s;
   -webkit-animation-delay:1s; /* Safari and Chrome */
   -webkit-animation-fill-mode: forwards;
 
@@ -170,13 +185,14 @@ header nav a {
   flex-wrap: wrap;
   height: 50vh;
   background: black;
+  padding: 0 5px;
 }
 
 .car-images picture {
   flex-basis: 25%;
-  display: block;
+  display: flex;
   position: relative;
-  padding: 10px;
+  padding: 5px;
   height: calc(50vh - 10px);
   overflow: hidden;
   scroll-snap-align: start;
@@ -184,7 +200,10 @@ header nav a {
 }
 
 .car-images picture img {
-max-width: 150%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .car-images picture:hover .overlay {
@@ -214,15 +233,19 @@ max-width: 150%;
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  padding: 2vw;
+  padding: 20px;
 }
 
 .text h3 {
-  font-family: 'SuperGroteskA';
+  font-family: 'Aktifo-B';
   font-weight: 600;
-  font-size: 7.4vw;
+  font-size: 5vw;
   margin: 0;
-  padding-top: 10%;
+  padding-top: 4%;
+  border-radius: 49%;
+  border: 0.7vw solid white;
+  width: 86%;
+  margin-top: 10%;
 }
 
 .text h4 {
@@ -241,6 +264,7 @@ max-width: 150%;
   padding: 10px;
   height: 50vh;
   overflow: scroll;
+  justify-content: space-between;
 }
 
 .about div:first-child {
@@ -248,34 +272,36 @@ max-width: 150%;
   padding: 20px 0 20px 0;
 }
 
+.about .about-p {
+  flex-basis: 50%;
+}
+
 .about .contact {
   display: flex;
 }
 
 .about h2 { 
-  font-family: 'SuperGroteskA';
-  font-weight: normal;
+
   display: block;
   flex-basis: 25%;
   margin: 0;
   font-size: 20px;
+  font-weight: 500;
 }
 
-.about div {
-  flex-basis: 50%;
-}
 
 .about p {
   margin-top: 0;
 }
 
-.about dd{
+.about .contact  dd{
   margin: 0;
+  margin-bottom: 20px;
 }
 
-.about dl {
+.about .contact dl {
   margin: 0;
-  flex-basis: 25%;
+  flex-basis: 35%;
 }
 
 .about a {
@@ -283,13 +309,24 @@ max-width: 150%;
   color: white;
 }
 
-.contact {
-  scroll-snap-align: start;
-  height: 50vh;
-  padding-bottom: 40px;
-}
+@media screen and (max-width: 1024px) {
 
-@media screen and (max-width: 1000px) {
+  .parent {
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: y proximity;
+  }
+
+  .full-screen-video picture {
+    width: 80%;
+    top: 30%;
+    left: 10%;
+  }
+  
+  .half-screen-logo picture {
+    width: 75%;
+  }
+
+
   .car-images picture {
     flex-basis: 50%;
   }
@@ -298,40 +335,73 @@ max-width: 150%;
     height: 200vh;
   }
 
-  .about div {
+  .text h3 {
+  font-size: 10vw;
+  border: 1.2vw solid white;
+  }
+
+  .about .about-p {
     flex-basis: 75%; 
   }
 
   .car-images {
     height: 100vh;
   }
+
+  .overlay {
+    opacity: 1;
+  }
+
+  .about dl {
+    margin: 0;
+    flex-basis: 50%;
+    margin-bottom: 20px;
+  }
+
+  .about .contact {
+    flex-wrap: wrap;
+  }
+
+  .about .contact dl:nth-of-type(2) {
+    margin-left: 25%;
+  }
 }
 
 @media screen and (max-width: 500px) {
 
+  .parent {
+    -webkit-overflow-scrolling: auto;
+    scroll-snap-type: y mandatory;
+    }
+
+
+  .full-screen-video picture {
+    width: 80%;
+    top: 30%;
+    left: 10%;
+  }
+
   .half-screen-logo picture {
+    width: 90%;
     padding-top: 10%;
-    width: 75%;
     display: block;
   }
 
-
-  .overlay {
-  opacity: 1;
-  }
-
   .text {
-    padding-bottom: 16%;
+    justify-content: center;
   }
 
   .text h3 {
-  font-size: 30vw;
-  padding-top: 20%;
+    font-size: 18vw;
+    border: 2.5vw solid white;
+    width: 78%;
+    margin-bottom: 5%;
+    margin-top: -20%;
   }
 
   .car-images picture {
     flex-basis: 100%;
-    padding: 10px 0;
+    padding: 0;
   }
 
   .image-set {
@@ -340,29 +410,63 @@ max-width: 150%;
 
   .car-images {
     height: 400vh;
+    padding-right: 0px;
+    padding-left: 0px;
+
   }
 
   .car-images picture {
-    height: calc(100vh - 10px);
+    height: 100vh;
   }
 
   .about {
     height: 100vh;
-    padding-top: 25%;
     padding-left: 20px;
-    padding-right: 20px
+    padding-right: 20px;
+    position: relative;
+    background-color: black;
+    z-index: 4;
+    scroll-snap-align: start;
+    flex-direction: column;
+    justify-content:flex-start;
+    
   }
 
   .about h2 {
+    font-weight: 500;
     margin-bottom: 20px;
+    flex-basis: 0;
   }
 
   .about div:first-child {
     flex-direction: column;
+    justify-content: center;
+  }
+
+  .about .about-p {
+    flex-basis: 0; 
   }
 
   .about .contact {
+    display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .about .contact dl {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    margin-bottom: 0;
+  }
+
+  .about .contact dl:nth-of-type(2) {
+    margin: 0;
+    padding-bottom: 100px;
+  }
+
+  .about .contact h2 {
+    display: none;
   }
 
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, minimal-ui">
     <link rel="stylesheet" href="./TCA_Styles/normalize.css" />
     <link rel="stylesheet" href="./TCA_Styles/style.css" />
     <title>The Classic Agency</title>
@@ -11,8 +12,8 @@
 <body>
     <header>
         <nav>
-            <a href="">ABOUT</a>
-            <a href="">CONTACT</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
         </nav>
     </header>
 
@@ -27,7 +28,7 @@
         </video>   
     <!-- <iframe src="" frameborder="0"></iframe> -->
     <picture>
-        <img src="./TCA_Images/TCA_Logo_Script.svg" alt="">
+        <img src="./TCA_Images/TCA_Logo_Monograph_Narrower.svg" alt="">
     </picture>
     </div>
 
@@ -35,7 +36,7 @@
 
     <div class="half-screen-logo">
         <picture>
-            <img src="./TCA_Images/TCA_Logo_Test-04.svg" alt="">
+            <img src="./TCA_Images/TCA_Logo_Narrower.svg" alt="">
         </picture>
     </div>
 
@@ -56,7 +57,7 @@
                         <div>
                             <p>2006</p>
                             <h4>PORSCHE</h4> 
-                            <p>Carrera GT “pts special order"</p>
+                            <p>Carrera GT “PTS Special Order"</p>
                         </div>
                     </div>
                 </div>
@@ -127,7 +128,7 @@
                         <div>
                             <p>1938</p>
                             <h4>LAGONDA</h4> 
-                            <p>Rapier “Phoenix Park” competition</p>
+                            <p>Rapier “Phoenix Park” Competition</p>
                         </div>
                     </div>
                 </div>
@@ -143,7 +144,7 @@
                         <h3>SOLD</h3>
                         <div>
                             <h4>CITROEN</h4> 
-                            <p>DS21 Cabriolet “barnfind"</p>
+                            <p>DS21 Cabriolet “Barnfind"</p>
                         </div>
                     </div>
                 </div>
@@ -187,10 +188,11 @@
 </div>
 <!-- About  -->
 
-    <section class="about">
+    <section class="about" id="about">
+        
         <div>
             <h2>ABOUT</h2>
-            <div>
+            <div class="about-p">
             <p>
             Earl Harvin is a professional musician and lifelong classic car enthusiast equally passionate about music as he is about the motorcar, as likely to befound trackside at Brands Hatch as backstage at the Hollywood Bowl.
             </p>
@@ -198,25 +200,21 @@
             Years of experience working as a musician across the globe has afforded the opportunity to connect not only with the most prominent names in the entertainment industry, but also some highly exclusive circles of 
             collector car enthusiasts.
             </p>
-            <p>  
-            Having found himself more and more frequently asked for advice amongst friends and colleagues, he decided to turn this passion into the business of consulting acquisitions and sales of specialised vintage, classic, sports, and competition motorcars.
-            </p>
-            <p>      
-            With access to diverse enthusiasts across the globe, a library of automotive literature, and a unique perspective and insight into collector car markets and trends, Earl Harvin and The Classic Agency has the means and knowledge to assist anyone in making the right choices.
-            </p>
             </div>
         </div>
-        <div class="contact">
+
+
+        <div class="contact" id="contact">
         <h2>CONTACT</h2>
         <dl>
             <dt>EMAIL</dt>
             <dd><a href="mailto:info@theclassagent.com">info@theclassicagency.com</a></dd>
-        </dl>
-        <dl>
+        
             <dt>PHONE</dt>
             <dd><a href="tel:">+49 (0) 123456789</a></dd>
         </dl>
         </div>
+
     </section>
 </body>
 </html>
