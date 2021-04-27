@@ -1,47 +1,3 @@
-@font-face {
-  font-family: 'Bau';
-  src: url('../TCA_Fonts/Bau-Medium.woff2') format('woff2'),
-        url('../TCA_Fonts/Bau-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Tw Cen MT';
-  src: url('../TCA_Fonts/TwCenMT-Regular.woff2') format('woff2'),
-        url('../TCA_Fonts/TwCenMT-Regular.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SuperGroteskA';
-    src: url('../TCA_Fonts/SuperGroteskA-Rg.woff2') format('woff2'),
-        url('../TCA_Fonts/SuperGroteskA-Rg.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SuperGroteskA';
-    src: url('../TCA_Fonts/SuperGroteskA-Bd.woff2') format('woff2'),
-        url('../TCA_Fonts/SuperGroteskA-Bd.woff') format('woff');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap
-}
-
-@font-face {
-  font-family: 'SuperGroteskA';
-    src: url('../TCA_Fonts/SuperGroteskA-Med.woff2') format('woff2'),
-        url('../TCA_Fonts/SuperGroteskA-Med.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap
-}
 
 @font-face {
   font-family: 'Aktifo-B';
@@ -62,8 +18,6 @@
   font-display: swap;
 }
 
-
-
 * {
     box-sizing: border-box;
   }
@@ -76,7 +30,6 @@ body {
   font-weight: 500;
   font-size: 20px;
   font-variant-numeric: oldstyle-nums;
-
 }
 
 img {
@@ -101,6 +54,8 @@ header nav a {
   color: white;
 }
 
+/* ----------------------------------------------------------- */
+
 /* Snap Scroll */
 
 .parent {
@@ -109,6 +64,8 @@ header nav a {
   overflow: scroll;
   margin-top: -62px;
 }
+
+/* ----------------------------------------------------------- */
 
 /* Section 1 - Video */
 
@@ -134,8 +91,9 @@ header nav a {
   height: 100vh;
   position: absolute;
   z-index: 1;
-  top: 25%;
-  left: 25%;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   animation:signup-response 0.5s 1;
   -webkit-animation:signup-response 0.5s 1;
@@ -157,6 +115,7 @@ header nav a {
   to {opacity :0;}
 }
 
+/* ----------------------------------------------------------- */
 /* Section 2 - Logo */
 
 .half-screen-logo {
@@ -172,90 +131,132 @@ header nav a {
   display: block;
 }
 
-/* Section 2 - Images */
+/* ----------------------------------------------------------- */
+/* Section 2 – Slideshow */
 
-.image-set {
-  position: static;
-  height: 100vh;
-  background: black;
-}
-
-.car-images {
+/* Slideshow flexbox */
+.slideshow-flexbox {
   display: flex;
-  flex-wrap: wrap;
   height: 50vh;
-  background: black;
-  padding: 0 5px;
+  width: 100%;
+  padding: 5px;
 }
 
-.car-images picture {
+/* Slideshow Container */
+.slideshow-container {
+  display: block;
   flex-basis: 25%;
-  display: flex;
   position: relative;
   padding: 5px;
-  height: calc(50vh - 10px);
+  height: 100%;
   overflow: hidden;
   scroll-snap-align: start;
   background: black;
+  z-index: 3;
 }
 
-.car-images picture img {
+/* Hide Images by Default */
+.mySlides {
+  display: none;
+  height: 100%;
+}
+
+/* Liquid Images*/
+.mySlides picture {
+  overflow: hidden;
+}
+
+.mySlides picture img {
   position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.car-images picture:hover .overlay {
-  opacity: 1;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #ffffff00;
-}
-
-.text {
-  color: white;
-  position: absolute;
+/* Caption text */
+.slideshow-text {
+  color: #f2f2f2;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
   padding: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.text h3 {
+.slideshow-text h3 {
   font-family: 'Aktifo-B';
   font-weight: 600;
-  font-size: 5vw;
-  margin: 0;
-  padding-top: 4%;
-  border-radius: 49%;
-  border: 0.7vw solid white;
-  width: 86%;
-  margin-top: 10%;
+  position: relative;
+	display: inline-block;
+	background: rgb(255, 0, 0);
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	transform: rotate(-20deg);
+	animation: beat 1s ease infinite alternate;
+  margin: 5%;
+  line-height: 5vw;
+  font-size: 1.6vw;
+  height: 5vw;
+	width: 5vw;
 }
 
-.text h4 {
+.slideshow-text h3:before, .slideshow-text h3:after {
+		content:"";
+		position: absolute;
+		background: inherit;
+		height: inherit;
+		width: inherit;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		transform: rotate(30deg);
+	}
+	
+  .slideshow-text h3:after {
+		transform: rotate(60deg);
+	}
+
+@keyframes beat {
+	from {transform: rotate(-20deg) scale(1);}
+	to {transform: rotate(-20deg) scale(1.1);}
+}
+
+.slideshow-text  h4 {
   margin: 0;
   font-weight: normal;
 }
 
-.text p {
+.slideshow-text  p {
   margin: 0;
 }
+
+/* Fading Animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0s;
+  animation-name: fade;
+  animation-duration: 0s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* ----------------------------------------------------------- */
+/* Section 3 - About */
 
 .about {
   scroll-snap-align: start;
@@ -281,14 +282,12 @@ header nav a {
 }
 
 .about h2 { 
-
   display: block;
   flex-basis: 25%;
   margin: 0;
   font-size: 20px;
   font-weight: 500;
 }
-
 
 .about p {
   margin-top: 0;
@@ -311,45 +310,47 @@ header nav a {
 
 @media screen and (max-width: 1024px) {
 
+/* ----------------------------------------------------------- */
+/* Snap Scroll */
+
   .parent {
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: y proximity;
   }
 
+/* ----------------------------------------------------------- */
+/* Section 1 - Video */
+
   .full-screen-video picture {
     width: 80%;
-    top: 30%;
-    left: 10%;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
+
+/* ----------------------------------------------------------- */
+/* Section 2 - Logo */
   
   .half-screen-logo picture {
     width: 75%;
   }
 
+/* ----------------------------------------------------------- */
+/* Section 2 – Slideshow */
 
-  .car-images picture {
-    flex-basis: 50%;
+  .slideshow-container {
+    flex-basis: 33%;
   }
 
-  .image-set {
-    height: 200vh;
+  .slideshow-container:nth-of-type(4) {
+    display: none;
   }
 
-  .text h3 {
-  font-size: 10vw;
-  border: 1.2vw solid white;
-  }
+/* ----------------------------------------------------------- */
+/* Section 3 – About */  
 
   .about .about-p {
     flex-basis: 75%; 
-  }
-
-  .car-images {
-    height: 100vh;
-  }
-
-  .overlay {
-    opacity: 1;
   }
 
   .about dl {
@@ -367,19 +368,29 @@ header nav a {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
+
+/* ----------------------------------------------------------- */
+/* Snap Scroll */
 
   .parent {
     -webkit-overflow-scrolling: auto;
     scroll-snap-type: y mandatory;
     }
 
+/* ----------------------------------------------------------- */
+/* Section 1 - Video */
 
   .full-screen-video picture {
     width: 80%;
-    top: 30%;
-    left: 10%;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
+
+
+/* ----------------------------------------------------------- */
+/* Section 2 – Slideshow */  
 
   .half-screen-logo picture {
     width: 90%;
@@ -387,37 +398,19 @@ header nav a {
     display: block;
   }
 
-  .text {
-    justify-content: center;
+/* ----------------------------------------------------------- */
+/* Section 2 – Slideshow */  
+
+  .slideshow-container {
+    flex-basis: 50%;
   }
 
-  .text h3 {
-    font-size: 18vw;
-    border: 2.5vw solid white;
-    width: 78%;
-    margin-bottom: 5%;
-    margin-top: -20%;
+  .slideshow-container:nth-of-type(3) {
+    display: none;
   }
 
-  .car-images picture {
-    flex-basis: 100%;
-    padding: 0;
-  }
-
-  .image-set {
-    height: 800vh;
-  }
-
-  .car-images {
-    height: 400vh;
-    padding-right: 0px;
-    padding-left: 0px;
-
-  }
-
-  .car-images picture {
-    height: 100vh;
-  }
+/* ----------------------------------------------------------- */
+/* Section 3 – About */ 
 
   .about {
     height: 100vh;
@@ -429,7 +422,6 @@ header nav a {
     scroll-snap-align: start;
     flex-direction: column;
     justify-content:flex-start;
-    
   }
 
   .about h2 {
@@ -470,4 +462,37 @@ header nav a {
     display: none;
   }
 
+}
+
+@media screen and (max-width: 450px) {
+
+/* ----------------------------------------------------------- */
+/* Section 2 – Slideshow */
+
+  .slideshow-flexbox {
+    height: 100vh;
+    padding: 0;
+  }
+
+  .slideshow-container {
+    flex-basis: 100%;
+    padding: 0;
+  }
+
+  .slideshow-container:nth-of-type(2) {
+    display: none;
+  }
+
+  .slideshow-text div {
+    margin-bottom: 90%;
+    font-size: 40px;
+  }
+
+  .slideshow-text h3 {
+    line-height: 16vw;
+    font-size: 5.1vw;
+    height: 16vw;
+    width: 16vw;
+    margin: 3%;
+  }
 }
