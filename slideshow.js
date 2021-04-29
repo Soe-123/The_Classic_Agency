@@ -26,5 +26,5 @@ function showSlides(slides, slideIndex, cycle) {
     /* Calling same function, but with new parameters and cycle time */
     setTimeout(function() {
         showSlides(slides, slideIndex, cycle)
-    }, 2000);
+    }, 3000);
 };
