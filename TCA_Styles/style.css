@@ -39,8 +39,11 @@ img {
 }
 
 header {
-  position: relative;
-  z-index: 2;}
+  position: fixed; /* Make it stick/fixed */
+  top: 0px; /* Stay on top */
+  width: 100%; /* Full width */
+  z-index: 5;
+}
 
 header nav {
   display: flex;
@@ -62,7 +65,9 @@ header nav a {
   scroll-snap-type: y mandatory;
   height: 100vh;
   overflow: scroll;
-  margin-top: -62px;
+  -webkit-transform: translateZ(0px);
+-webkit-transform: translate3d(0,0,0);
+-webkit-perspective: 1000;
 }
 
 /* ----------------------------------------------------------- */
@@ -152,7 +157,12 @@ header nav a {
   overflow: hidden;
   scroll-snap-align: start;
   background: black;
-  z-index: 3;
+  z-index: 999;
+  -webkit-transform:translateZ(1px);
+      -moz-transform:translateZ(1px);
+      -o-transform:translateZ(1px);
+      transform:translateZ(1px);
+
 }
 
 /* Hide Images by Default */
@@ -315,7 +325,10 @@ header nav a {
 
   .parent {
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
+  -webkit-transform: translateZ(0px);
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-perspective: 1000;
   }
 
 /* ----------------------------------------------------------- */
@@ -340,6 +353,8 @@ header nav a {
 
   .slideshow-container {
     flex-basis: 33%;
+    -webkit-transform:translateZ(10px);
+
   }
 
   .slideshow-container:nth-of-type(4) {
@@ -494,5 +509,9 @@ header nav a {
     height: 16vw;
     width: 16vw;
     margin: 3%;
+  }
+
+  .about div:first-child {
+    padding: 20px 0 20px 0;
   }
 }
