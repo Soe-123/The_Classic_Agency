@@ -239,8 +239,7 @@ header nav a {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  height: 50vh;
-  overflow: scroll;
+  height: auto;
   justify-content: space-between;
   padding-top: 40px;
 }
