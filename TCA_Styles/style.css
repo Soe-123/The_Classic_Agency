@@ -238,10 +238,10 @@ header nav a {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px;
   height: auto;
   justify-content: space-between;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .about div:first-child {
