@@ -104,8 +104,8 @@ header nav a {
   -webkit-animation:signup-response 0.5s 1;
   animation-fill-mode: forwards;
 
-  animation-delay:7s;
-  -webkit-animation-delay:1s; /* Safari and Chrome */
+  animation-delay:8s;
+  -webkit-animation-delay:8s; /* Safari and Chrome */
   -webkit-animation-fill-mode: forwards;
 
 } 
@@ -241,7 +241,7 @@ header nav a {
   padding: 20px;
   height: auto;
   justify-content: space-between;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .about div:first-child {
