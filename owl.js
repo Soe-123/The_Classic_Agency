@@ -22,11 +22,11 @@ $(document).ready(function(){
                 items: 1,
                 dots: false
             },
-            450:{
+            550:{
                 items: 2,
                 dots: false
             },
-            650:{
+            750:{
                 items: 3,
                 dots: false
             },

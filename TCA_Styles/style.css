@@ -8,7 +8,6 @@
   font-display: swap;
 }
 
-
 @font-face {
   font-family: 'Aktifo-B';
   src: url('../TCA_Fonts/Aktifo-B-SemiBold.woff2') format('woff2'),
@@ -230,6 +229,13 @@ header nav a {
 .slideshow-text  p {
   margin: 0;
 }
+
+.slideshow-text div {
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}  
 
 /* ----------------------------------------------------------- */
 /* Section 3 - About */
@@ -454,7 +460,6 @@ header nav a {
   }
 
   .slideshow-text div {
-    margin-bottom: 90%;
     font-size: 40px;
   }
 
@@ -463,10 +468,15 @@ header nav a {
     font-size: 5.1vw;
     height: 16vw;
     width: 16vw;
-    margin: 3%;
+    margin: 5%;
+    margin-top: 8%;
   }
 
   .about div:first-child {
     padding: 20px 0 20px 0;
+  }
+
+  .about {
+    padding-bottom:120px;
   }
 }
